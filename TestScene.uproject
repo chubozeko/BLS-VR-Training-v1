@@ -1,0 +1,74 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "5.3",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "TestScene",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "RigLogic",
+			"Enabled": true
+		},
+		{
+			"Name": "LiveLinkControlRig",
+			"Enabled": true
+		},
+		{
+			"Name": "AppleARKitFaceSupport",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"IOS",
+				"Win64",
+				"Mac",
+				"Linux",
+				"Android"
+			]
+		},
+		{
+			"Name": "HairStrands",
+			"Enabled": true
+		},
+		{
+			"Name": "MeshMorpher",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/5ff1652829e74a1e983fff0c9d7d5c66"
+		},
+		{
+			"Name": "VarjoOpenXR",
+			"Enabled": false,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/1804011a48a743cbbeb9336edcafe923"
+		},
+		{
+			"Name": "OculusXR",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/8313d8d7e7cf4e03a33e79eb757bccba",
+			"SupportedTargetPlatforms": [
+				"Win64",
+				"Android"
+			]
+		}
+	],
+	"TargetPlatforms": [
+		"Android",
+		"IOS",
+		"Linux",
+		"Mac",
+		"PS4",
+		"PS5",
+		"Windows",
+		"WindowsNoEditor",
+		"Switch",
+		"XboxOne",
+		"XSX",
+		"HoloLens"
+	]
+}

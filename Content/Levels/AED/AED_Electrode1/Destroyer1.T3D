@@ -1,0 +1,81 @@
+Begin Object Class=/Script/Engine.Blueprint Name="Destroyer1" ExportPath="/Script/Engine.Blueprint'/Game/Levels/AED/AED_Electrode2/Destroyer1.Destroyer1'"
+   Begin Object Class=/Script/Engine.EdGraph Name="UserConstructionScript" ExportPath="/Script/Engine.EdGraph'/Game/Levels/AED/AED_Electrode2/Destroyer1.Destroyer1:UserConstructionScript'"
+      Begin Object Class=/Script/BlueprintGraph.K2Node_FunctionEntry Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/Levels/AED/AED_Electrode2/Destroyer1.Destroyer1:UserConstructionScript.K2Node_FunctionEntry_0'"
+      End Object
+   End Object
+   Begin Object Class=/Script/Engine.EdGraph Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/Levels/AED/AED_Electrode2/Destroyer1.Destroyer1:EventGraph'"
+      Begin Object Class=/Script/BlueprintGraph.K2Node_Event Name="K2Node_Event_2" ExportPath="/Script/BlueprintGraph.K2Node_Event'/Game/Levels/AED/AED_Electrode2/Destroyer1.Destroyer1:EventGraph.K2Node_Event_2'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_Event Name="K2Node_Event_1" ExportPath="/Script/BlueprintGraph.K2Node_Event'/Game/Levels/AED/AED_Electrode2/Destroyer1.Destroyer1:EventGraph.K2Node_Event_1'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_Event Name="K2Node_Event_0" ExportPath="/Script/BlueprintGraph.K2Node_Event'/Game/Levels/AED/AED_Electrode2/Destroyer1.Destroyer1:EventGraph.K2Node_Event_0'"
+      End Object
+   End Object
+   Begin Object Name="UserConstructionScript" ExportPath="/Script/Engine.EdGraph'/Game/Levels/AED/AED_Electrode2/Destroyer1.Destroyer1:UserConstructionScript'"
+      Begin Object Name="K2Node_FunctionEntry_0" ExportPath="/Script/BlueprintGraph.K2Node_FunctionEntry'/Game/Levels/AED/AED_Electrode2/Destroyer1.Destroyer1:UserConstructionScript.K2Node_FunctionEntry_0'"
+         FunctionReference=(MemberParent="/Script/CoreUObject.Class'/Script/Engine.Actor'",MemberName="UserConstructionScript")
+         NodeGuid=701661BF4E131A5E0E1B669D1D415D2B
+         CustomProperties Pin (PinId=19E8297A4C12F3325FC8ACB0DD4089F2,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
+      Nodes(0)="/Script/BlueprintGraph.K2Node_FunctionEntry'K2Node_FunctionEntry_0'"
+      bAllowDeletion=False
+      GraphGuid=75319E9D41C83408CF50FB99DCF455E1
+   End Object
+   Begin Object Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/Levels/AED/AED_Electrode2/Destroyer1.Destroyer1:EventGraph'"
+      Begin Object Name="K2Node_Event_2" ExportPath="/Script/BlueprintGraph.K2Node_Event'/Game/Levels/AED/AED_Electrode2/Destroyer1.Destroyer1:EventGraph.K2Node_Event_2'"
+         EventReference=(MemberParent="/Script/CoreUObject.Class'/Script/Engine.Actor'",MemberName="ReceiveTick")
+         bOverrideFunction=True
+         NodePosY=416
+         EnabledState=Disabled
+         bCommentBubblePinned=True
+         bCommentBubbleVisible=True
+         NodeComment="This node is disabled and will not be called.\nDrag off pins to build functionality."
+         NodeGuid=505E42324E38FCF9787133B82EC7EBD5
+         CustomProperties Pin (PinId=196D47FD43E37F276FBCF4BAE4FC7AD5,PinName="OutputDelegate",Direction="EGPD_Output",PinType.PinCategory="delegate",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(MemberParent="/Script/CoreUObject.Class'/Script/Engine.Actor'",MemberName="ReceiveTick"),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=A3270DAD42EB109496F7E3BC24AD2AAA,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=2AE6DF9B43071454C539B4BC6EF7A224,PinName="DeltaSeconds",PinToolTip="Delta Seconds\nFloat (single-precision)",Direction="EGPD_Output",PinType.PinCategory="real",PinType.PinSubCategory="float",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="0.0",AutogeneratedDefaultValue="0.0",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Begin Object Name="K2Node_Event_1" ExportPath="/Script/BlueprintGraph.K2Node_Event'/Game/Levels/AED/AED_Electrode2/Destroyer1.Destroyer1:EventGraph.K2Node_Event_1'"
+         EventReference=(MemberParent="/Script/CoreUObject.Class'/Script/Engine.Actor'",MemberName="ReceiveActorBeginOverlap")
+         bOverrideFunction=True
+         NodePosY=208
+         EnabledState=Disabled
+         bCommentBubblePinned=True
+         bCommentBubbleVisible=True
+         NodeComment="This node is disabled and will not be called.\nDrag off pins to build functionality."
+         NodeGuid=F87DCBA84358E63F5E6DE18BAA4BC5C9
+         CustomProperties Pin (PinId=8055299E43A03EE43F2168B3780B0B5D,PinName="OutputDelegate",Direction="EGPD_Output",PinType.PinCategory="delegate",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(MemberParent="/Script/CoreUObject.Class'/Script/Engine.Actor'",MemberName="ReceiveActorBeginOverlap"),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=4629733440ED25C0131EB180A5C659EA,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=1EE14CB2401196857535479BA44F7E65,PinName="OtherActor",PinToolTip="Other Actor\nActor Object Reference",Direction="EGPD_Output",PinType.PinCategory="object",PinType.PinSubCategory="",PinType.PinSubCategoryObject="/Script/CoreUObject.Class'/Script/Engine.Actor'",PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Begin Object Name="K2Node_Event_0" ExportPath="/Script/BlueprintGraph.K2Node_Event'/Game/Levels/AED/AED_Electrode2/Destroyer1.Destroyer1:EventGraph.K2Node_Event_0'"
+         EventReference=(MemberParent="/Script/CoreUObject.Class'/Script/Engine.Actor'",MemberName="ReceiveBeginPlay")
+         bOverrideFunction=True
+         EnabledState=Disabled
+         bCommentBubblePinned=True
+         bCommentBubbleVisible=True
+         NodeComment="This node is disabled and will not be called.\nDrag off pins to build functionality."
+         NodeGuid=DAF595D74D3F4B45A0F5F2A03B2D0381
+         CustomProperties Pin (PinId=79DE85054FB4C895F99CF7876B717837,PinName="OutputDelegate",Direction="EGPD_Output",PinType.PinCategory="delegate",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(MemberParent="/Script/CoreUObject.Class'/Script/Engine.Actor'",MemberName="ReceiveBeginPlay"),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+         CustomProperties Pin (PinId=CDF6C387498BC9778DFE948CD80C63FD,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+      End Object
+      Schema="/Script/CoreUObject.Class'/Script/BlueprintGraph.EdGraphSchema_K2'"
+      Nodes(0)="/Script/BlueprintGraph.K2Node_Event'K2Node_Event_0'"
+      Nodes(1)="/Script/BlueprintGraph.K2Node_Event'K2Node_Event_1'"
+      Nodes(2)="/Script/BlueprintGraph.K2Node_Event'K2Node_Event_2'"
+      bAllowDeletion=False
+      GraphGuid=AE0377F2409F8C0478B93F8D24CBCBFD
+   End Object
+   ParentClass="/Script/CoreUObject.Class'/Script/Engine.Actor'"
+   BlueprintSystemVersion=2
+   SimpleConstructionScript="/Script/Engine.SimpleConstructionScript'Destroyer1_C:SimpleConstructionScript_0'"
+   UbergraphPages(0)="/Script/Engine.EdGraph'EventGraph'"
+   FunctionGraphs(0)="/Script/Engine.EdGraph'UserConstructionScript'"
+   CategorySorting(0)="Default"
+   CategorySorting(1)=""
+   CategorySorting(2)="Event Graph"
+   GeneratedClass="/Script/Engine.BlueprintGeneratedClass'Destroyer1_C'"
+   bLegacyNeedToPurgeSkelRefs=False
+   BlueprintGuid=A639F32A427A85FBF701869EEA65809C
+End Object
