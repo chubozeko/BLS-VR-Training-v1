@@ -74,7 +74,8 @@ Plugins/**/Intermediate/*
 # Cache files for the editor to use
 DerivedDataCache/*
 
-Content/Characters/*
+# Content/Characters/*
+Content/Characters/NPC3_Phone/Animations/*
 Content/Metahumans/*
 Content/References/AutomotiveMats/Materials/*
 Content/ModularBuildingSet/*
