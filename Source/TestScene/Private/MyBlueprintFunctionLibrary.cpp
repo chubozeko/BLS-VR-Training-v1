@@ -18,10 +18,10 @@ float UMyBlueprintFunctionLibrary::CompressionDepth(FTransform Chest, FTransform
 	float DistXY = VHand.DistXY(VHand, VChest);
 
 	//uncomment to display hand position used to trigger compressions
-	if (GEngine)
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("%f"), DistanceToChest));
-	if (GEngine)
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("%f"), DistXY));
+	// if (GEngine)
+	// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("%f"), DistanceToChest));
+	// if (GEngine)
+	//	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("%f"), DistXY));
 
 	if (DistXY<= 10) {	
 		
