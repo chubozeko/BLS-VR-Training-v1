@@ -15,21 +15,21 @@ FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency) {
 		if (Depth != 0.0) {
 			if (Depth <= 6.0) {
 				if (Depth >= 4.0) {
-					if (GEngine)
-						GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("Correct Compression, depth : %f"), Depth));
+					// if (GEngine)
+					// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("Correct Compression, depth : %f"), Depth));
 				}
 				else if (Depth > 0.0)
 				{
-					if (GEngine)
-						GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("COMPRESSION TOO SHALLOW PUSH DEEPER")));
+					// if (GEngine)
+					// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("COMPRESSION TOO SHALLOW PUSH DEEPER")));
 				}
 				else {
 
 				}
 			}
 			else {
-				if (GEngine)
-					GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("COMPRESSION TOO DEEP")));
+				// if (GEngine)
+				// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("COMPRESSION TOO DEEP")));
 			}
 		}
 		
@@ -37,19 +37,19 @@ FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency) {
 	if (Frequency != 0.0) {
 		if (Frequency <= 4.16) {
 			if (Frequency >= 2.5) {
-				if (GEngine)
-					GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("Correct frequency, Frequency : %f"), Frequency));
+				// if (GEngine)
+				// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("Correct frequency, Frequency : %f"), Frequency));
 				Color = Color.Green;
 			}
 			else {
-				if (GEngine)
-					GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("TOO FAST, SLOW DOWN")));
+				// if (GEngine)
+				// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("TOO FAST, SLOW DOWN")));
 				Color = Color.Red;
 			}
 		}
 		else {
-			if (GEngine)
-				GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("TOO SLOW, GO FASTER")));
+			// if (GEngine)
+			// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("TOO SLOW, GO FASTER")));
 			Color = Color.Red;
 		}
 	}
