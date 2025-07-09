@@ -76,7 +76,9 @@ DerivedDataCache/*
 
 # Content/Characters/*
 Content/Characters/NPC3_Phone/Animations/*
-Content/Metahumans/*
+# Content/Metahumans/*
+Content/Metahumans/Common
+Content/Metahumans/Omar
 Content/References/AutomotiveMats/Materials/*
 Content/ModularBuildingSet/*
 Content/CarConfigurator/*
