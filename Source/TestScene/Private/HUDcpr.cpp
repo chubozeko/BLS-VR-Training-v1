@@ -5,9 +5,10 @@
 #include "Engine/Engine.h"
 
 static int PreviousDepth;
+static int ChestCompressions = 5;
 static FLinearColor Color = FLinearColor(0, 0, 0, 0);
 
-FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency) {
+FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency, float LowerBPM, float UpperBPM, FString& BpmInfoText) {
 	//hud values brackets for both depth and frequency. Frequency is calculated for 5 compressions
 	
 	if (PreviousDepth != Depth) {
@@ -34,24 +35,37 @@ FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency) {
 		}
 		
 	}
+
+	float freqHigh = ChestCompressions / (UpperBPM / 60.0);
+	float freqLow = ChestCompressions / (LowerBPM / 60.0);
+
 	if (Frequency != 0.0) {
-		if (Frequency <= 4.16) {
-			if (Frequency >= 2.5) {
+		if (Frequency <= freqLow) { /* OLD VALUE: 4.16, NEW VALUE: 3.0 */
+			if (Frequency >= freqHigh) { /* OLD VALUE: 2.5, NEW VALUE: 2.5 */
 				// if (GEngine)
 				// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("Correct frequency, Frequency : %f"), Frequency));
 				Color = Color.Green;
+				BpmInfoText = "CORRECT";
 			}
 			else {
 				// if (GEngine)
 				// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("TOO FAST, SLOW DOWN")));
 				Color = Color.Red;
+				BpmInfoText = "SLOW DOWN!";
+				// BpmInfoText += "\nCompression Frequency: %f BPM", (ChestCompressions / Frequency*60);
 			}
 		}
 		else {
 			// if (GEngine)
 			// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("TOO SLOW, GO FASTER")));
 			Color = Color.Red;
+			BpmInfoText = "GO FASTER!";
+			// BpmInfoText += "\nCompression Frequency: " + (ChestCompressions / Frequency*60) + " BPM";
 		}
+		BpmInfoText += "\nCompression Rate:\n" + FString::SanitizeFloat(((ChestCompressions / Frequency)*60), 2) + " BPM"; 		
 	}
+	
 	return Color;
 }
+
+// float GetChestCompressionFrequencyTime(float )
