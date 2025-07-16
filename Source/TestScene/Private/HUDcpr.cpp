@@ -44,28 +44,28 @@ FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency, float LowerBPM, f
 			if (Frequency >= freqHigh) { /* OLD VALUE: 2.5, NEW VALUE: 2.5 */
 				// if (GEngine)
 				// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("Correct frequency, Frequency : %f"), Frequency));
+				BpmInfoText = "Oikea";
+				// BpmInfoText = "CORRECT";
 				Color = Color.Green;
-				BpmInfoText = "CORRECT";
 			}
 			else {
 				// if (GEngine)
 				// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("TOO FAST, SLOW DOWN")));
+				BpmInfoText = "Hidasta Vauhtia!";
+				// BpmInfoText = "SLOW DOWN!";
 				Color = Color.Red;
-				BpmInfoText = "SLOW DOWN!";
-				// BpmInfoText += "\nCompression Frequency: %f BPM", (ChestCompressions / Frequency*60);
 			}
 		}
 		else {
 			// if (GEngine)
 			// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("TOO SLOW, GO FASTER")));
+			BpmInfoText = "Mene Nopeammin!";
+			// BpmInfoText = "GO FASTER!";
 			Color = Color.Red;
-			BpmInfoText = "GO FASTER!";
-			// BpmInfoText += "\nCompression Frequency: " + (ChestCompressions / Frequency*60) + " BPM";
 		}
-		BpmInfoText += "\nCompression Rate:\n" + FString::SanitizeFloat(((ChestCompressions / Frequency)*60), 2) + " BPM"; 		
+		BpmInfoText += FString::Printf(TEXT("\nPuristustaajuus:\n%.2f BPM"), (ChestCompressions / Frequency)*60);
+		// BpmInfoText += FString::Printf(TEXT("\nCompression Rate:\n%.2f BPM"), (ChestCompressions / Frequency)*60);
 	}
 	
 	return Color;
 }
-
-// float GetChestCompressionFrequencyTime(float )
