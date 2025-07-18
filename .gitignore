@@ -74,11 +74,11 @@ Plugins/**/Intermediate/*
 # Cache files for the editor to use
 DerivedDataCache/*
 
-# Exclude the following due to file sizes
+# Content/Characters/*
 Content/Characters/NPC3_Phone/Animations/*
+# Content/Metahumans/*
 Content/Metahumans/Common
 Content/Metahumans/Omar
-Content/Metahumans/Yuri/Face/Yuri_FaceMesh*
 Content/References/AutomotiveMats/Materials/*
 Content/ModularBuildingSet/*
 Content/CarConfigurator/*
