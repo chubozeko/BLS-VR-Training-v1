@@ -8,7 +8,7 @@ static int PreviousDepth;
 static int ChestCompressions = 5;
 static FLinearColor Color = FLinearColor(0, 0, 0, 0);
 
-FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency, float LowerBPM, float UpperBPM, FString& BpmInfoText) {
+FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency, float LowerBPM, float UpperBPM, FString& BpmInfoText, float& FrequencyInBPM) {
 	//hud values brackets for both depth and frequency. Frequency is calculated for 5 compressions
 	
 	if (PreviousDepth != Depth) {
@@ -63,8 +63,13 @@ FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency, float LowerBPM, f
 			// BpmInfoText = "GO FASTER!";
 			Color = Color.Red;
 		}
-		BpmInfoText += FString::Printf(TEXT("\nPuristustaajuus:\n%.2f BPM"), (ChestCompressions / Frequency)*60);
+		FrequencyInBPM = (ChestCompressions / Frequency) * 60;
+		BpmInfoText += FString::Printf(TEXT("\nPuristustaajuus:\n%.2f BPM"), FrequencyInBPM); // (ChestCompressions / Frequency)*60);
 		// BpmInfoText += FString::Printf(TEXT("\nCompression Rate:\n%.2f BPM"), (ChestCompressions / Frequency)*60);
+	} else {
+		FrequencyInBPM = 0.0f;
+		BpmInfoText = " ";
+		Color = Color.White;
 	}
 	
 	return Color;
