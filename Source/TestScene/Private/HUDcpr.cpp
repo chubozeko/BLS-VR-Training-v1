@@ -5,9 +5,10 @@
 #include "Engine/Engine.h"
 
 static int PreviousDepth;
+static int ChestCompressions = 5;
 static FLinearColor Color = FLinearColor(0, 0, 0, 0);
 
-FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency) {
+FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency, float LowerBPM, float UpperBPM, FString& BpmInfoText, float& FrequencyInBPM) {
 	//hud values brackets for both depth and frequency. Frequency is calculated for 5 compressions
 	
 	if (PreviousDepth != Depth) {
@@ -34,24 +35,42 @@ FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency) {
 		}
 		
 	}
+
+	float freqHigh = ChestCompressions / (UpperBPM / 60.0);
+	float freqLow = ChestCompressions / (LowerBPM / 60.0);
+
 	if (Frequency != 0.0) {
-		if (Frequency <= 4.16) {
-			if (Frequency >= 2.5) {
+		if (Frequency <= freqLow) { /* OLD VALUE: 4.16, NEW VALUE: 3.0 */
+			if (Frequency >= freqHigh) { /* OLD VALUE: 2.5, NEW VALUE: 2.5 */
 				// if (GEngine)
 				// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("Correct frequency, Frequency : %f"), Frequency));
+				BpmInfoText = "Oikea";
+				// BpmInfoText = "CORRECT";
 				Color = Color.Green;
 			}
 			else {
 				// if (GEngine)
 				// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("TOO FAST, SLOW DOWN")));
+				BpmInfoText = "Hidasta Vauhtia!";
+				// BpmInfoText = "SLOW DOWN!";
 				Color = Color.Red;
 			}
 		}
 		else {
 			// if (GEngine)
 			// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("TOO SLOW, GO FASTER")));
+			BpmInfoText = "Mene Nopeammin!";
+			// BpmInfoText = "GO FASTER!";
 			Color = Color.Red;
 		}
+		FrequencyInBPM = (ChestCompressions / Frequency) * 60;
+		BpmInfoText += FString::Printf(TEXT("\nPuristustaajuus:\n%.2f BPM"), FrequencyInBPM); // (ChestCompressions / Frequency)*60);
+		// BpmInfoText += FString::Printf(TEXT("\nCompression Rate:\n%.2f BPM"), (ChestCompressions / Frequency)*60);
+	} else {
+		FrequencyInBPM = 0.0f;
+		BpmInfoText = " ";
+		Color = Color.White;
 	}
+	
 	return Color;
 }
