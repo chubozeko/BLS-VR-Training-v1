@@ -47,7 +47,7 @@ FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency, float LowerBPM, f
 			if (Frequency >= freqHigh) { /* OLD VALUE: 2.5, NEW VALUE: 2.5 */
 				// if (GEngine)
 				// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("Correct frequency, Frequency : %f"), Frequency));
-				BpmInfoText = "Oikea";
+				BpmInfoText = "Oikea Painelutaajuus";
 				// BpmInfoText = "CORRECT";
 				Color = Color.Green;
 			}
@@ -62,12 +62,12 @@ FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency, float LowerBPM, f
 		else {
 			// if (GEngine)
 			// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("TOO SLOW, GO FASTER")));
-			BpmInfoText = "Mene Nopeammin!";
+			BpmInfoText = "Painele Nopeammin";
 			// BpmInfoText = "GO FASTER!";
 			Color = Color.Red;
 		}
 		FrequencyInBPM = (ChestCompressions / Frequency) * 60;
-		BpmInfoText += FString::Printf(TEXT("\nPuristustaajuus:\n%.2f BPM"), FrequencyInBPM); // (ChestCompressions / Frequency)*60);
+		BpmInfoText += FString::Printf(TEXT("\nPainelutaajuus:\n%.2f BPM"), FrequencyInBPM); // (ChestCompressions / Frequency)*60);
 		// BpmInfoText += FString::Printf(TEXT("\nCompression Rate:\n%.2f BPM"), (ChestCompressions / Frequency)*60);
 	} else {
 		FrequencyInBPM = 0.0f;
