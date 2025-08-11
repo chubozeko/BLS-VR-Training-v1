@@ -8,7 +8,7 @@ static int PreviousDepth;
 static int ChestCompressions = 5;
 static FLinearColor Color = FLinearColor(0, 0, 0, 0);
 
-FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency, float LowerBPM, float UpperBPM, FString& BpmInfoText, float& FrequencyInBPM) {
+FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency, float LowerBPM, float UpperBPM, FString& BpmInfoText, float& FrequencyInBPM, int& DepthFlag) {
 	//hud values brackets for both depth and frequency. Frequency is calculated for 5 compressions
 	
 	if (PreviousDepth != Depth) {
@@ -18,11 +18,13 @@ FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency, float LowerBPM, f
 				if (Depth >= 4.0) {
 					// if (GEngine)
 					// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("Correct Compression, depth : %f"), Depth));
+					DepthFlag = 0;
 				}
 				else if (Depth > 0.0)
 				{
 					// if (GEngine)
 					// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("COMPRESSION TOO SHALLOW PUSH DEEPER")));
+					DepthFlag = 1;
 				}
 				else {
 
@@ -31,6 +33,7 @@ FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency, float LowerBPM, f
 			else {
 				// if (GEngine)
 				// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("COMPRESSION TOO DEEP")));
+				DepthFlag = -1;
 			}
 		}
 		
@@ -44,7 +47,7 @@ FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency, float LowerBPM, f
 			if (Frequency >= freqHigh) { /* OLD VALUE: 2.5, NEW VALUE: 2.5 */
 				// if (GEngine)
 				// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("Correct frequency, Frequency : %f"), Frequency));
-				BpmInfoText = "Oikea";
+				BpmInfoText = "Oikea Painelutaajuus";
 				// BpmInfoText = "CORRECT";
 				Color = Color.Green;
 			}
@@ -59,12 +62,12 @@ FLinearColor UHUDcpr::DisplayHUD(float Depth, float Frequency, float LowerBPM, f
 		else {
 			// if (GEngine)
 			// 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("TOO SLOW, GO FASTER")));
-			BpmInfoText = "Mene Nopeammin!";
+			BpmInfoText = "Painele Nopeammin";
 			// BpmInfoText = "GO FASTER!";
 			Color = Color.Red;
 		}
 		FrequencyInBPM = (ChestCompressions / Frequency) * 60;
-		BpmInfoText += FString::Printf(TEXT("\nPuristustaajuus:\n%.2f BPM"), FrequencyInBPM); // (ChestCompressions / Frequency)*60);
+		BpmInfoText += FString::Printf(TEXT("\nPainelutaajuus:\n%.2f BPM"), FrequencyInBPM); // (ChestCompressions / Frequency)*60);
 		// BpmInfoText += FString::Printf(TEXT("\nCompression Rate:\n%.2f BPM"), (ChestCompressions / Frequency)*60);
 	} else {
 		FrequencyInBPM = 0.0f;
